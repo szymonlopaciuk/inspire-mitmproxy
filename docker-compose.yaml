@@ -1,0 +1,27 @@
+# -*- coding: utf-8 -*-
+#
+# This file is part of hepcrawl.
+# Copyright (C) 2018 CERN.
+#
+# hepcrawl is a free software; you can redistribute it and/or modify it
+# under the terms of the Revised BSD License; see LICENSE file for
+# more details.
+
+version: '2.1'
+
+services:
+  mitm-proxy:
+    build:
+      context: ${PWD}
+      dockerfile: Dockerfile
+    image: inspire-mitmproxy
+    tty: true
+    volumes:
+      - ${PWD}:/code/
+    ports:
+      - 127.0.0.1:8081:8081
+    healthcheck:
+      timeout: 5s
+      interval: 5s
+      retries: 5
+      test: nc -z 127.0.0.1:8080

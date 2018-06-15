@@ -1,0 +1,14 @@
+request:
+  body: !!python/unicode '{"value": "response2"}'
+  headers:
+    Accept: [application/json]
+    Accept-Encoding: ['gzip, deflate']
+    Connection: [keep-alive]
+    User-Agent: [python-requests/2.18.4]
+  method: POST
+  url: https://host_a.local/api
+response:
+  body: null
+  headers:
+    content-type: [application/json; charset=UTF-8]
+  status: {code: 201, message: Created}

@@ -1,0 +1,14 @@
+request:
+  body: null
+  headers:
+    Accept: [application/json]
+    Accept-Encoding: ['gzip, deflate']
+    Connection: [keep-alive]
+    User-Agent: [python-requests/2.18.4]
+  method: GET
+  url: https://host_a.local/api
+response:
+  body: !!python/unicode '{"value": "response1"}'
+  headers:
+    content-type: [application/json; charset=UTF-8]
+  status: {code: 200, message: OK}

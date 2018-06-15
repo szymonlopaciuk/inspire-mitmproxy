@@ -1,0 +1,26 @@
+request:
+  body: null
+  headers:
+    Host: [test.local]
+  method: GET
+  url: https://test.local/path
+response:
+  body: null
+  headers: {}
+  status:
+    code: 200
+    message: OK
+callbacks:
+- request:
+    body: '1'
+    method: GET
+    url: http://callback.local
+    headers:
+      Host: [callback.local]
+- delay: 0.5
+  request:
+    body: '2'
+    method: GET
+    url: http://${TEST_ENVAR_INTERPOLATION}.local
+    headers:
+      Host: ['${TEST_ENVAR_INTERPOLATION}.local']

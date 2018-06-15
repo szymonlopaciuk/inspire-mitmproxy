@@ -1,0 +1,378 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Changelog &mdash; inspire-mitmproxy  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="inspire_mitmproxy.services package" href="_apidoc/inspire_mitmproxy.services.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> inspire-mitmproxy
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.12.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="architecture.html#dispatcher">Dispatcher</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture.html#services">Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture.html#management-service">Management Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture.html#whitelist-service">Whitelist Service</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="_apidoc/inspire_mitmproxy.html">inspire_mitmproxy package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="_apidoc/inspire_mitmproxy.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="_apidoc/inspire_mitmproxy.services.html">inspire_mitmproxy.services package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="_apidoc/inspire_mitmproxy.services.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_apidoc/inspire_mitmproxy.services.html#module-inspire_mitmproxy.services.arxiv_service">inspire_mitmproxy.services.arxiv_service module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_apidoc/inspire_mitmproxy.services.html#module-inspire_mitmproxy.services.base_service">inspire_mitmproxy.services.base_service module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_apidoc/inspire_mitmproxy.services.html#module-inspire_mitmproxy.services.legacy_service">inspire_mitmproxy.services.legacy_service module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_apidoc/inspire_mitmproxy.services.html#module-inspire_mitmproxy.services.management_service">inspire_mitmproxy.services.management_service module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_apidoc/inspire_mitmproxy.services.html#module-inspire_mitmproxy.services.rt_service">inspire_mitmproxy.services.rt_service module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_apidoc/inspire_mitmproxy.services.html#module-inspire_mitmproxy.services.whitelist_service">inspire_mitmproxy.services.whitelist_service module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="_apidoc/inspire_mitmproxy.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_apidoc/inspire_mitmproxy.html#module-inspire_mitmproxy.dispatcher">inspire_mitmproxy.dispatcher module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_apidoc/inspire_mitmproxy.html#module-inspire_mitmproxy.errors">inspire_mitmproxy.errors module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_apidoc/inspire_mitmproxy.html#module-inspire_mitmproxy.http">inspire_mitmproxy.http module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_apidoc/inspire_mitmproxy.html#module-inspire_mitmproxy.interaction">inspire_mitmproxy.interaction module</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Changelog</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">inspire-mitmproxy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Changelog</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/changelog.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="changelog">
+<h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>* 0.12.4 &quot;Szymon Łopaciuk &lt;szymon@lopaciuk.eu&gt;&quot;
+    MINOR 6fd24967: 844 docs: create documentation for mitmproxy
+
+* 0.12.3 &quot;Szymon Łopaciuk &lt;szymon.lopaciuk@cern.ch&gt;&quot;
+    MINOR 144736ec: Merge pull request #25 from
+    szymonlopaciuk/clear_interactions_count
+    MINOR f949af8f: base_service: reset counts on scenario switch
+
+* 0.12.2 &quot;Szymon Łopaciuk &lt;szymon.lopaciuk@cern.ch&gt;&quot;
+    MINOR 04788d5c: Merge pull request #24 from
+    szymonlopaciuk/fix_encoding_bugs
+    MINOR 39fa9370: http: fix bugs in encoding on serialization
+
+* 0.12.1 &quot;David Caro &lt;david@dcaro.es&gt;&quot;
+    MINOR 8c99f734: travis: don&#39;t deploy on non-master branches
+
+* 0.12.0 &quot;David Caro &lt;david@dcaro.es&gt;&quot;
+    FEATURE d45c6f6b: Merge pull request #23 from
+    szymonlopaciuk/recording_feature
+    MINOR 826f8060: 691 services: add recording feature
+
+* 0.11.1 &quot;David Caro &lt;david@dcaro.es&gt;&quot;
+    MINOR 54425d5f: Merge pull request #22 from
+    david-caro/allow_repeating_interactions_per_scenario
+    MINOR 321d62c6: interaction_count: be per-scenario
+
+* 0.11.0 &quot;Szymon Łopaciuk &lt;szymon.lopaciuk@cern.ch&gt;&quot;
+    FEATURE f2a8968f: Merge pull request #21 from
+    szymonlopaciuk/proxy_interaction_api
+    MINOR 9c93712a: management_service: add proxy interaction API
+
+* 0.10.1 &quot;David Caro &lt;david@dcaro.es&gt;&quot;
+    MINOR f54e5edb: Merge pull request #19 from david-caro/add_callback_logs
+    MINOR 05730b9e: callbacks: add log entry when doing a callback
+
+* 0.10.0 &quot;David Caro &lt;david@dcaro.es&gt;&quot;
+    FEATURE 2bfeb22b: Merge pull request #18 from szymonlopaciuk/fake-rt
+    MINOR 818ea6ee: services: RT, create a default init scenario
+
+* 0.9.1 &quot;David Caro &lt;david@dcaro.es&gt;&quot;
+    MINOR 68950128: Merge pull request #17 from ammirate/whitelist_from_env
+    MINOR 9bee4225: whitelist: get services from env variable
+
+* 0.9.0 &quot;David Caro &lt;david@dcaro.es&gt;&quot;
+    FEATURE fd5ee34d: Merge pull request #14 from szymonlopaciuk/fake-legacy
+    MINOR 00c9fa28: interaction: interpolate envars in callbacks
+    MINOR b6b04518: 687 services: add the legacy service
+
+* 0.8.0 &quot;Szymon Łopaciuk &lt;szymon.lopaciuk@cern.ch&gt;&quot;
+    FEATURE 9802aa07: Merge pull request #16 from
+    szymonlopaciuk/cassette_callbacks
+    MINOR 744db933: 730 interaction: introduce callbacks
+
+* 0.7.0 &quot;Szymon Łopaciuk &lt;szymon.lopaciuk@cern.ch&gt;&quot;
+    FEATURE 1a6139b7: Merge pull request #15 from szymonlopaciuk/cassette_rules
+    MINOR c5c011d7: interaction: match requests by rules in yaml
+
+* 0.6.0 &quot;Szymon Łopaciuk &lt;szymon.lopaciuk@cern.ch&gt;&quot;
+    FEATURE 7d3b9560: Merge pull request #13 from szymonlopaciuk/bytes_body
+    MINOR 3d10a5b1: http: make body bytes, add whitelist services
+
+* 0.5.0 &quot;Szymon Łopaciuk &lt;szymon.lopaciuk@cern.ch&gt;&quot;
+    FEATURE 19a19275: Merge pull request #12 from szymonlopaciuk/wrappers
+    MINOR 3c17ce49: services: move whitelist and manager into services
+    MINOR 6b42b96f: setup: add 2 lines after imports
+    MINOR c0a1b22c: http: move wrappers to one file module
+    MINOR 2f83dc42: global: use wrappers for HTTP entities
+    MINOR 4f781caf: misc: review changes
+    MINOR a9281fd5: global: introduce wrappers for HTTP entities
+
+* 0.4.1 &quot;Szymon Łopaciuk &lt;szymon.lopaciuk@cern.ch&gt;&quot;
+    MINOR fee1fe9d: Merge pull request #11 from szymonlopaciuk/pypy_releasing
+    MINOR 78aab178: setup: enable PyPI releasing
+
+* 0.4.0 &quot;Szymon Łopaciuk &lt;szymon.lopaciuk@cern.ch&gt;&quot;
+    FEATURE b3dc1343: Merge pull request #10 from szymonlopaciuk/services
+    FEATURE c5cc8e19: 540 services: create an ArXiV service
+    FEATURE 754f988e: global: service list of classes in dispatcher
+
+* 0.3.1 &quot;David Caro &lt;david@dcaro.es&gt;&quot;
+    MINOR bb41433e: Merge pull request #9 from szymonlopaciuk/small_refactor
+    MINOR 1337c503: tests: make suites modules: allow same test names
+    MINOR 831c301b: errors: refactor to use f-strings
+    MINOR e8d526a9: setup: remove overlap between requires
+
+* 0.3.0 &quot;Szymon Łopaciuk &lt;szymon.lopaciuk@cern.ch&gt;&quot;
+    FEATURE 6d29514c: Merge pull request #8 from szymonlopaciuk/base_service
+    FEATURE 830134a4: setup: add pathlib dep, use in ManagementService
+    FEATURE f9dfeb6e: 537 base_service: load YAMLs, switch scenarios
+
+* 0.2.1 &quot;David Caro &lt;david@dcaro.es&gt;&quot;
+    MINOR c9e5cf04: Merge pull request #7 from
+    szymonlopaciuk/move_ca_to_root_home
+    MINOR d73bed2a: 661 move CA file to the root home directory
+
+* 0.2.0 &quot;David Caro &lt;david@dcaro.es&gt;&quot;
+    FEATURE ce6116b4: Merge pull request #6 from
+    szymonlopaciuk/introduce_whitelist
+    FEATURE 98854986: 618 introduce a whitelist service
+
+* 0.1.0 &quot;David Caro &lt;david@dcaro.es&gt;&quot;
+    FEATURE 2f29cac0: Merge pull request #5 from
+    szymonlopaciuk/introduce_mgmt_service
+    FEATURE 871eea28: management_service: add endpoints
+    FEATURE 9703b676: create base for the management service
+
+* 0.0.5 &quot;David Caro &lt;david@dcaro.es&gt;&quot;
+    MINOR e9a35d07: Merge pull request #4 from szymonlopaciuk/add_mypy
+    MINOR e3420c51: mypy: add mypy static type checking
+
+* 0.0.4 &quot;David Caro &lt;david@dcaro.es&gt;&quot;
+    MINOR 610d2822: Merge pull request #3 from szymonlopaciuk/fix_install_deps
+    MINOR 35833854: Dockerfile properly install setup.py dependencies
+
+* 0.0.3 &quot;Szymon Łopaciuk &lt;szymon.lopaciuk@cern.ch&gt;&quot;
+    MINOR 02e4b579: Merge pull request #2 from szymonlopaciuk/push_to_docker
+    MINOR d82d0b3e: push images to docker on travis success, add CA
+
+* 0.0.2 &quot;David Caro &lt;david@dcaro.es&gt;&quot;
+    MINOR 3acc88d9: Merge pull request #1 from
+    szymonlopaciuk/initialise_dispatcher
+    MINOR 9bd93be3: initialise repository and create dispatcher
+    MINOR aff77674: add travis configuration
+
+* 0.0.1 &quot;David Caro &lt;david@dcaro.es&gt;&quot;
+    MINOR d9a9ee6b: Initial commit
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="_apidoc/inspire_mitmproxy.services.html" class="btn btn-neutral" title="inspire_mitmproxy.services package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, CERN.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

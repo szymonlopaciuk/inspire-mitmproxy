@@ -1,0 +1,5 @@
+include *.rst
+include *.py
+include AUTHORS
+include CHANGELOG
+include LICENSE

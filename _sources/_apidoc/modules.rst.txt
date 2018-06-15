@@ -1,0 +1,7 @@
+inspire_mitmproxy
+=================
+
+.. toctree::
+   :maxdepth: 4
+
+   inspire_mitmproxy

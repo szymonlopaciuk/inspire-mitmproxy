@@ -1,0 +1,11 @@
+request:
+  body: null
+  headers:
+    Accept: [application/json]
+  method: GET
+  url: https://host_b.local/api
+response:
+  body: !!python/unicode 'test_scenario_replays_ok/TestServiceB/0'
+  headers:
+    content-type: [application/json]
+  status: {code: 200, message: OK}

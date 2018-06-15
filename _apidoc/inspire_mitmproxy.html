@@ -1,0 +1,623 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>inspire_mitmproxy package &mdash; inspire-mitmproxy  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="inspire_mitmproxy.services package" href="inspire_mitmproxy.services.html" />
+    <link rel="prev" title="Architecture" href="../architecture.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> inspire-mitmproxy
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.12.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../architecture.html">Architecture</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../architecture.html#dispatcher">Dispatcher</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../architecture.html#services">Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../architecture.html#management-service">Management Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../architecture.html#whitelist-service">Whitelist Service</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">inspire_mitmproxy package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="inspire_mitmproxy.services.html">inspire_mitmproxy.services package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="inspire_mitmproxy.services.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="inspire_mitmproxy.services.html#module-inspire_mitmproxy.services.arxiv_service">inspire_mitmproxy.services.arxiv_service module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="inspire_mitmproxy.services.html#module-inspire_mitmproxy.services.base_service">inspire_mitmproxy.services.base_service module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="inspire_mitmproxy.services.html#module-inspire_mitmproxy.services.legacy_service">inspire_mitmproxy.services.legacy_service module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="inspire_mitmproxy.services.html#module-inspire_mitmproxy.services.management_service">inspire_mitmproxy.services.management_service module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="inspire_mitmproxy.services.html#module-inspire_mitmproxy.services.rt_service">inspire_mitmproxy.services.rt_service module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="inspire_mitmproxy.services.html#module-inspire_mitmproxy.services.whitelist_service">inspire_mitmproxy.services.whitelist_service module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-inspire_mitmproxy.dispatcher">inspire_mitmproxy.dispatcher module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-inspire_mitmproxy.errors">inspire_mitmproxy.errors module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-inspire_mitmproxy.http">inspire_mitmproxy.http module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-inspire_mitmproxy.interaction">inspire_mitmproxy.interaction module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">inspire-mitmproxy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>inspire_mitmproxy package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/_apidoc/inspire_mitmproxy.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-inspire_mitmproxy">
+<span id="inspire-mitmproxy-package"></span><h1>inspire_mitmproxy package<a class="headerlink" href="#module-inspire_mitmproxy" title="Permalink to this headline">¶</a></h1>
+<p>INSPIRE MITMProxy for E2E Tests.</p>
+<div class="section" id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="inspire_mitmproxy.services.html">inspire_mitmproxy.services package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="inspire_mitmproxy.services.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inspire_mitmproxy.services.html#module-inspire_mitmproxy.services.arxiv_service">inspire_mitmproxy.services.arxiv_service module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inspire_mitmproxy.services.html#module-inspire_mitmproxy.services.base_service">inspire_mitmproxy.services.base_service module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inspire_mitmproxy.services.html#module-inspire_mitmproxy.services.legacy_service">inspire_mitmproxy.services.legacy_service module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inspire_mitmproxy.services.html#module-inspire_mitmproxy.services.management_service">inspire_mitmproxy.services.management_service module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inspire_mitmproxy.services.html#module-inspire_mitmproxy.services.rt_service">inspire_mitmproxy.services.rt_service module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inspire_mitmproxy.services.html#module-inspire_mitmproxy.services.whitelist_service">inspire_mitmproxy.services.whitelist_service module</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-inspire_mitmproxy.dispatcher">
+<span id="inspire-mitmproxy-dispatcher-module"></span><h2>inspire_mitmproxy.dispatcher module<a class="headerlink" href="#module-inspire_mitmproxy.dispatcher" title="Permalink to this headline">¶</a></h2>
+<p>Dispatcher forwards requests to Services.</p>
+<dl class="class">
+<dt id="inspire_mitmproxy.dispatcher.Dispatcher">
+<em class="property">class </em><code class="descclassname">inspire_mitmproxy.dispatcher.</code><code class="descname">Dispatcher</code> &#x2192; None<a class="headerlink" href="#inspire_mitmproxy.dispatcher.Dispatcher" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="attribute">
+<dt id="inspire_mitmproxy.dispatcher.Dispatcher.SERVICE_LIST">
+<code class="descname">SERVICE_LIST</code><em class="property"> = [&lt;class 'inspire_mitmproxy.services.arxiv_service.ArxivService'&gt;, &lt;class 'inspire_mitmproxy.services.legacy_service.LegacyService'&gt;, &lt;class 'inspire_mitmproxy.services.rt_service.RTService'&gt;, &lt;class 'inspire_mitmproxy.services.whitelist_service.WhitelistService'&gt;]</em><a class="headerlink" href="#inspire_mitmproxy.dispatcher.Dispatcher.SERVICE_LIST" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="inspire_mitmproxy.dispatcher.Dispatcher.find_service_for_request">
+<code class="descname">find_service_for_request</code><span class="sig-paren">(</span><em>request: inspire_mitmproxy.http.MITMRequest</em><span class="sig-paren">)</span> &#x2192; inspire_mitmproxy.services.base_service.BaseService<a class="headerlink" href="#inspire_mitmproxy.dispatcher.Dispatcher.find_service_for_request" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="inspire_mitmproxy.dispatcher.Dispatcher.is_flow_passed_through">
+<em class="property">static </em><code class="descname">is_flow_passed_through</code><span class="sig-paren">(</span><em>flow: mitmproxy.http.HTTPFlow</em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#inspire_mitmproxy.dispatcher.Dispatcher.is_flow_passed_through" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="inspire_mitmproxy.dispatcher.Dispatcher.process_request">
+<code class="descname">process_request</code><span class="sig-paren">(</span><em>request: inspire_mitmproxy.http.MITMRequest</em><span class="sig-paren">)</span> &#x2192; inspire_mitmproxy.http.MITMResponse<a class="headerlink" href="#inspire_mitmproxy.dispatcher.Dispatcher.process_request" title="Permalink to this definition">¶</a></dt>
+<dd><p>Perform operations and give response.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="inspire_mitmproxy.dispatcher.Dispatcher.process_response">
+<code class="descname">process_response</code><span class="sig-paren">(</span><em>request: inspire_mitmproxy.http.MITMRequest</em>, <em>response: inspire_mitmproxy.http.MITMResponse</em><span class="sig-paren">)</span><a class="headerlink" href="#inspire_mitmproxy.dispatcher.Dispatcher.process_response" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hook for live responses.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="inspire_mitmproxy.dispatcher.Dispatcher.request">
+<code class="descname">request</code><span class="sig-paren">(</span><em>flow: mitmproxy.http.HTTPFlow</em><span class="sig-paren">)</span><a class="headerlink" href="#inspire_mitmproxy.dispatcher.Dispatcher.request" title="Permalink to this definition">¶</a></dt>
+<dd><p>MITMProxy addon event interface for outgoing request.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="inspire_mitmproxy.dispatcher.Dispatcher.response">
+<code class="descname">response</code><span class="sig-paren">(</span><em>flow: mitmproxy.http.HTTPFlow</em><span class="sig-paren">)</span><a class="headerlink" href="#inspire_mitmproxy.dispatcher.Dispatcher.response" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-inspire_mitmproxy.errors">
+<span id="inspire-mitmproxy-errors-module"></span><h2>inspire_mitmproxy.errors module<a class="headerlink" href="#module-inspire_mitmproxy.errors" title="Permalink to this headline">¶</a></h2>
+<p>INSPIRE-MITMProxy Errors</p>
+<dl class="exception">
+<dt id="inspire_mitmproxy.errors.DoNotIntercept">
+<em class="property">exception </em><code class="descclassname">inspire_mitmproxy.errors.</code><code class="descname">DoNotIntercept</code><span class="sig-paren">(</span><em>service_name: str</em>, <em>request: inspire_mitmproxy.http.MITMRequest</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#inspire_mitmproxy.errors.DoNotIntercept" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="inspire_mitmproxy.errors.InvalidRequest">
+<em class="property">exception </em><code class="descclassname">inspire_mitmproxy.errors.</code><code class="descname">InvalidRequest</code><span class="sig-paren">(</span><em>service_name: str</em>, <em>request: inspire_mitmproxy.http.MITMRequest</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#inspire_mitmproxy.errors.InvalidRequest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#inspire_mitmproxy.errors.MITMProxyHTTPError" title="inspire_mitmproxy.errors.MITMProxyHTTPError"><code class="xref py py-class docutils literal notranslate"><span class="pre">inspire_mitmproxy.errors.MITMProxyHTTPError</span></code></a></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="inspire_mitmproxy.errors.MITMProxyHTTPError">
+<em class="property">exception </em><code class="descclassname">inspire_mitmproxy.errors.</code><code class="descname">MITMProxyHTTPError</code><a class="headerlink" href="#inspire_mitmproxy.errors.MITMProxyHTTPError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<dl class="attribute">
+<dt id="inspire_mitmproxy.errors.MITMProxyHTTPError.http_status_code">
+<code class="descname">http_status_code</code><em class="property"> = 500</em><a class="headerlink" href="#inspire_mitmproxy.errors.MITMProxyHTTPError.http_status_code" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="inspire_mitmproxy.errors.NoMatchingRecording">
+<em class="property">exception </em><code class="descclassname">inspire_mitmproxy.errors.</code><code class="descname">NoMatchingRecording</code><span class="sig-paren">(</span><em>service_name: str</em>, <em>request: inspire_mitmproxy.http.MITMRequest</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#inspire_mitmproxy.errors.NoMatchingRecording" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#inspire_mitmproxy.errors.MITMProxyHTTPError" title="inspire_mitmproxy.errors.MITMProxyHTTPError"><code class="xref py py-class docutils literal notranslate"><span class="pre">inspire_mitmproxy.errors.MITMProxyHTTPError</span></code></a></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="inspire_mitmproxy.errors.NoServicesForRequest">
+<em class="property">exception </em><code class="descclassname">inspire_mitmproxy.errors.</code><code class="descname">NoServicesForRequest</code><span class="sig-paren">(</span><em>request: inspire_mitmproxy.http.MITMRequest</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#inspire_mitmproxy.errors.NoServicesForRequest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#inspire_mitmproxy.errors.MITMProxyHTTPError" title="inspire_mitmproxy.errors.MITMProxyHTTPError"><code class="xref py py-class docutils literal notranslate"><span class="pre">inspire_mitmproxy.errors.MITMProxyHTTPError</span></code></a></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="inspire_mitmproxy.errors.RequestNotHandledInService">
+<em class="property">exception </em><code class="descclassname">inspire_mitmproxy.errors.</code><code class="descname">RequestNotHandledInService</code><span class="sig-paren">(</span><em>service_name: str</em>, <em>request: inspire_mitmproxy.http.MITMRequest</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#inspire_mitmproxy.errors.RequestNotHandledInService" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#inspire_mitmproxy.errors.MITMProxyHTTPError" title="inspire_mitmproxy.errors.MITMProxyHTTPError"><code class="xref py py-class docutils literal notranslate"><span class="pre">inspire_mitmproxy.errors.MITMProxyHTTPError</span></code></a></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="inspire_mitmproxy.errors.ScenarioNotInService">
+<em class="property">exception </em><code class="descclassname">inspire_mitmproxy.errors.</code><code class="descname">ScenarioNotInService</code><span class="sig-paren">(</span><em>service_name: str</em>, <em>scenario: str</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#inspire_mitmproxy.errors.ScenarioNotInService" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#inspire_mitmproxy.errors.MITMProxyHTTPError" title="inspire_mitmproxy.errors.MITMProxyHTTPError"><code class="xref py py-class docutils literal notranslate"><span class="pre">inspire_mitmproxy.errors.MITMProxyHTTPError</span></code></a></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="inspire_mitmproxy.errors.ServiceNotFound">
+<em class="property">exception </em><code class="descclassname">inspire_mitmproxy.errors.</code><code class="descname">ServiceNotFound</code><span class="sig-paren">(</span><em>service_name: str</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#inspire_mitmproxy.errors.ServiceNotFound" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#inspire_mitmproxy.errors.MITMProxyHTTPError" title="inspire_mitmproxy.errors.MITMProxyHTTPError"><code class="xref py py-class docutils literal notranslate"><span class="pre">inspire_mitmproxy.errors.MITMProxyHTTPError</span></code></a></p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-inspire_mitmproxy.http">
+<span id="inspire-mitmproxy-http-module"></span><h2>inspire_mitmproxy.http module<a class="headerlink" href="#module-inspire_mitmproxy.http" title="Permalink to this headline">¶</a></h2>
+<p>Wrappers for HTTP objects.</p>
+<dl class="class">
+<dt id="inspire_mitmproxy.http.MITMHeaders">
+<em class="property">class </em><code class="descclassname">inspire_mitmproxy.http.</code><code class="descname">MITMHeaders</code><span class="sig-paren">(</span><em>headers: Dict[str, List[str]]</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#inspire_mitmproxy.http.MITMHeaders" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="classmethod">
+<dt id="inspire_mitmproxy.http.MITMHeaders.from_dict">
+<em class="property">classmethod </em><code class="descname">from_dict</code><span class="sig-paren">(</span><em>headers_dict: Dict[str, List[str]]</em><span class="sig-paren">)</span> &#x2192; inspire_mitmproxy.http.MITMHeaders<a class="headerlink" href="#inspire_mitmproxy.http.MITMHeaders.from_dict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="inspire_mitmproxy.http.MITMHeaders.from_mitmproxy">
+<em class="property">classmethod </em><code class="descname">from_mitmproxy</code><span class="sig-paren">(</span><em>headers: mitmproxy.net.http.headers.Headers</em><span class="sig-paren">)</span> &#x2192; inspire_mitmproxy.http.MITMHeaders<a class="headerlink" href="#inspire_mitmproxy.http.MITMHeaders.from_mitmproxy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="inspire_mitmproxy.http.MITMHeaders.keys">
+<code class="descname">keys</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; KeysView[str]<a class="headerlink" href="#inspire_mitmproxy.http.MITMHeaders.keys" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="inspire_mitmproxy.http.MITMHeaders.to_dict">
+<code class="descname">to_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; Dict[str, List[str]]<a class="headerlink" href="#inspire_mitmproxy.http.MITMHeaders.to_dict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="inspire_mitmproxy.http.MITMHeaders.to_mitmproxy">
+<code class="descname">to_mitmproxy</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; mitmproxy.net.http.headers.Headers<a class="headerlink" href="#inspire_mitmproxy.http.MITMHeaders.to_mitmproxy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="inspire_mitmproxy.http.MITMRequest">
+<em class="property">class </em><code class="descclassname">inspire_mitmproxy.http.</code><code class="descname">MITMRequest</code><span class="sig-paren">(</span><em>url: str</em>, <em>method: str = 'GET'</em>, <em>body: Union[str</em>, <em>bytes</em>, <em>NoneType] = None</em>, <em>headers: Union[inspire_mitmproxy.http.MITMHeaders</em>, <em>NoneType] = None</em>, <em>original_encoding: Union[str</em>, <em>NoneType] = None</em>, <em>http_version: Union[str</em>, <em>NoneType] = None</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#inspire_mitmproxy.http.MITMRequest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="classmethod">
+<dt id="inspire_mitmproxy.http.MITMRequest.from_dict">
+<em class="property">classmethod </em><code class="descname">from_dict</code><span class="sig-paren">(</span><em>request: Dict[str, Any]</em><span class="sig-paren">)</span> &#x2192; inspire_mitmproxy.http.MITMRequest<a class="headerlink" href="#inspire_mitmproxy.http.MITMRequest.from_dict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="inspire_mitmproxy.http.MITMRequest.from_mitmproxy">
+<em class="property">classmethod </em><code class="descname">from_mitmproxy</code><span class="sig-paren">(</span><em>request: mitmproxy.http.HTTPRequest</em><span class="sig-paren">)</span> &#x2192; inspire_mitmproxy.http.MITMRequest<a class="headerlink" href="#inspire_mitmproxy.http.MITMRequest.from_mitmproxy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="inspire_mitmproxy.http.MITMRequest.to_dict">
+<code class="descname">to_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; Dict[str, Any]<a class="headerlink" href="#inspire_mitmproxy.http.MITMRequest.to_dict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="inspire_mitmproxy.http.MITMRequest.to_mitmproxy">
+<code class="descname">to_mitmproxy</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; mitmproxy.http.HTTPRequest<a class="headerlink" href="#inspire_mitmproxy.http.MITMRequest.to_mitmproxy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="inspire_mitmproxy.http.MITMResponse">
+<em class="property">class </em><code class="descclassname">inspire_mitmproxy.http.</code><code class="descname">MITMResponse</code><span class="sig-paren">(</span><em>status_code: int = 200</em>, <em>status_message: Union[str</em>, <em>NoneType] = None</em>, <em>body: Union[str</em>, <em>bytes</em>, <em>NoneType] = None</em>, <em>headers: Union[inspire_mitmproxy.http.MITMHeaders</em>, <em>NoneType] = None</em>, <em>original_encoding: Union[str</em>, <em>NoneType] = None</em>, <em>http_version: Union[str</em>, <em>NoneType] = None</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#inspire_mitmproxy.http.MITMResponse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="classmethod">
+<dt id="inspire_mitmproxy.http.MITMResponse.from_dict">
+<em class="property">classmethod </em><code class="descname">from_dict</code><span class="sig-paren">(</span><em>response: Dict[str, Any]</em><span class="sig-paren">)</span> &#x2192; inspire_mitmproxy.http.MITMResponse<a class="headerlink" href="#inspire_mitmproxy.http.MITMResponse.from_dict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="inspire_mitmproxy.http.MITMResponse.from_mitmproxy">
+<em class="property">classmethod </em><code class="descname">from_mitmproxy</code><span class="sig-paren">(</span><em>response: mitmproxy.http.HTTPResponse</em><span class="sig-paren">)</span> &#x2192; inspire_mitmproxy.http.MITMResponse<a class="headerlink" href="#inspire_mitmproxy.http.MITMResponse.from_mitmproxy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="inspire_mitmproxy.http.MITMResponse.to_dict">
+<code class="descname">to_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; Dict[str, Any]<a class="headerlink" href="#inspire_mitmproxy.http.MITMResponse.to_dict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="inspire_mitmproxy.http.MITMResponse.to_mitmproxy">
+<code class="descname">to_mitmproxy</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; mitmproxy.http.HTTPResponse<a class="headerlink" href="#inspire_mitmproxy.http.MITMResponse.to_mitmproxy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="inspire_mitmproxy.http.encoding_by_header">
+<code class="descclassname">inspire_mitmproxy.http.</code><code class="descname">encoding_by_header</code><span class="sig-paren">(</span><em>headers: inspire_mitmproxy.http.MITMHeaders</em><span class="sig-paren">)</span> &#x2192; str<a class="headerlink" href="#inspire_mitmproxy.http.encoding_by_header" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extract charset param from Content-Type or Accept headers</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="inspire_mitmproxy.http.response_to_string">
+<code class="descclassname">inspire_mitmproxy.http.</code><code class="descname">response_to_string</code><span class="sig-paren">(</span><em>res: requests.models.Response</em><span class="sig-paren">)</span> &#x2192; str<a class="headerlink" href="#inspire_mitmproxy.http.response_to_string" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>res</strong> – <code class="xref py py-class docutils literal notranslate"><span class="pre">requests.Response</span></code> object</td>
+</tr>
+</tbody>
+</table>
+<p>Parse the given request and generate an informative string from it</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-inspire_mitmproxy.interaction">
+<span id="inspire-mitmproxy-interaction-module"></span><h2>inspire_mitmproxy.interaction module<a class="headerlink" href="#module-inspire_mitmproxy.interaction" title="Permalink to this headline">¶</a></h2>
+<p>Interaction is a recording of a request-response pair that is to be replayed during the test.</p>
+<p>Scenarios are what interactions are organised into. For inspire-next they reside at:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tests</span><span class="o">/</span><span class="n">e2e</span><span class="o">/</span><span class="n">scenarios</span>
+</pre></div>
+</div>
+<p>The directory structure is as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">scenarios</span><span class="o">/&lt;</span><span class="n">scenario_name</span><span class="o">&gt;/&lt;</span><span class="n">service_name</span><span class="o">&gt;/&lt;</span><span class="n">interaction</span><span class="o">&gt;.</span><span class="n">yaml</span>
+</pre></div>
+</div>
+<p>Scenario name can be anything,
+but by convention it is the name of the E2E test without the <cite>test_</cite> prefix. Service name has to
+match one of the services defined in <a class="reference internal" href="inspire_mitmproxy.services.html#module-inspire_mitmproxy.services" title="inspire_mitmproxy.services"><code class="xref py py-attr docutils literal notranslate"><span class="pre">inspire_mitmproxy.services</span></code></a>. Name of the interaction
+can be anything, and is only for informative purposes. When recorded automatically, interactions
+are named in sequence of <cite>interaction_0.yaml</cite>, <cite>interaction_1.yaml</cite>, and so on.</p>
+<dl class="class">
+<dt id="inspire_mitmproxy.interaction.Interaction">
+<em class="property">class </em><code class="descclassname">inspire_mitmproxy.interaction.</code><code class="descname">Interaction</code><span class="sig-paren">(</span><em>name: str, request: inspire_mitmproxy.http.MITMRequest, response: inspire_mitmproxy.http.MITMResponse, match: Union[dict, NoneType] = None, callbacks: Union[typing.List[dict], NoneType] = None</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#inspire_mitmproxy.interaction.Interaction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="attribute">
+<dt id="inspire_mitmproxy.interaction.Interaction.DEFAULT_CALLBACK_DELAY">
+<code class="descname">DEFAULT_CALLBACK_DELAY</code><em class="property"> = 0.5</em><a class="headerlink" href="#inspire_mitmproxy.interaction.Interaction.DEFAULT_CALLBACK_DELAY" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="inspire_mitmproxy.interaction.Interaction.DEFAULT_EXACT_MATCH_FIELDS">
+<code class="descname">DEFAULT_EXACT_MATCH_FIELDS</code><em class="property"> = ['url', 'method', 'body']</em><a class="headerlink" href="#inspire_mitmproxy.interaction.Interaction.DEFAULT_EXACT_MATCH_FIELDS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="inspire_mitmproxy.interaction.Interaction.DEFAULT_NAME_MATCH_REGEX">
+<code class="descname">DEFAULT_NAME_MATCH_REGEX</code><em class="property"> = re.compile('^interaction_(\\d+)$')</em><a class="headerlink" href="#inspire_mitmproxy.interaction.Interaction.DEFAULT_NAME_MATCH_REGEX" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="inspire_mitmproxy.interaction.Interaction.DEFAULT_NAME_PATTERN">
+<code class="descname">DEFAULT_NAME_PATTERN</code><em class="property"> = 'interaction_{}'</em><a class="headerlink" href="#inspire_mitmproxy.interaction.Interaction.DEFAULT_NAME_PATTERN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="inspire_mitmproxy.interaction.Interaction.DEFAULT_REGEX_MATCH_FIELDS">
+<code class="descname">DEFAULT_REGEX_MATCH_FIELDS</code><em class="property"> = {}</em><a class="headerlink" href="#inspire_mitmproxy.interaction.Interaction.DEFAULT_REGEX_MATCH_FIELDS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="inspire_mitmproxy.interaction.Interaction.exact_match_fields">
+<code class="descname">exact_match_fields</code><a class="headerlink" href="#inspire_mitmproxy.interaction.Interaction.exact_match_fields" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fields specified match exactly.</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="inspire_mitmproxy.interaction.Interaction.execute_callback">
+<em class="property">static </em><code class="descname">execute_callback</code><span class="sig-paren">(</span><em>request: inspire_mitmproxy.http.MITMRequest, delay: Union[int, float]</em><span class="sig-paren">)</span><a class="headerlink" href="#inspire_mitmproxy.interaction.Interaction.execute_callback" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="inspire_mitmproxy.interaction.Interaction.execute_callbacks">
+<code class="descname">execute_callbacks</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#inspire_mitmproxy.interaction.Interaction.execute_callbacks" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="inspire_mitmproxy.interaction.Interaction.from_file">
+<em class="property">classmethod </em><code class="descname">from_file</code><span class="sig-paren">(</span><em>interaction_file: Union[pathlib.Path, NoneType]</em><span class="sig-paren">)</span> &#x2192; inspire_mitmproxy.interaction.Interaction<a class="headerlink" href="#inspire_mitmproxy.interaction.Interaction.from_file" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="inspire_mitmproxy.interaction.Interaction.get_next_sequence_number_in_dir">
+<em class="property">classmethod </em><code class="descname">get_next_sequence_number_in_dir</code><span class="sig-paren">(</span><em>directory: pathlib.Path</em><span class="sig-paren">)</span> &#x2192; int<a class="headerlink" href="#inspire_mitmproxy.interaction.Interaction.get_next_sequence_number_in_dir" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="inspire_mitmproxy.interaction.Interaction.matches_request">
+<code class="descname">matches_request</code><span class="sig-paren">(</span><em>request: inspire_mitmproxy.http.MITMRequest</em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#inspire_mitmproxy.interaction.Interaction.matches_request" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if interaction matches the request.</p>
+<p>By default the request is matching the prerecoded request if their urls, methods and bodies
+are equal (see <a class="reference internal" href="#inspire_mitmproxy.interaction.Interaction.DEFAULT_EXACT_MATCH_FIELDS" title="inspire_mitmproxy.interaction.Interaction.DEFAULT_EXACT_MATCH_FIELDS"><code class="xref py py-attr docutils literal notranslate"><span class="pre">DEFAULT_EXACT_MATCH_FIELDS</span></code></a>
+and <a class="reference internal" href="#inspire_mitmproxy.interaction.Interaction.DEFAULT_REGEX_MATCH_FIELDS" title="inspire_mitmproxy.interaction.Interaction.DEFAULT_REGEX_MATCH_FIELDS"><code class="xref py py-attr docutils literal notranslate"><span class="pre">DEFAULT_REGEX_MATCH_FIELDS</span></code></a>). You
+can specify custom matching rules per interaction by using the <code class="docutils literal notranslate"><span class="pre">match</span></code> field in the
+interaction YAML file.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="inspire_mitmproxy.interaction.Interaction.next_in_dir">
+<em class="property">classmethod </em><code class="descname">next_in_dir</code><span class="sig-paren">(</span><em>directory: pathlib.Path</em>, <em>request: inspire_mitmproxy.http.MITMRequest</em>, <em>response: inspire_mitmproxy.http.MITMResponse</em><span class="sig-paren">)</span> &#x2192; inspire_mitmproxy.interaction.Interaction<a class="headerlink" href="#inspire_mitmproxy.interaction.Interaction.next_in_dir" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new interaction with a name taking from next available in directory.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="inspire_mitmproxy.interaction.Interaction.regex_match_fields">
+<code class="descname">regex_match_fields</code><a class="headerlink" href="#inspire_mitmproxy.interaction.Interaction.regex_match_fields" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fields specified (as key in the dictionary) match on the regex defined in value.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="inspire_mitmproxy.interaction.Interaction.save_in_dir">
+<code class="descname">save_in_dir</code><span class="sig-paren">(</span><em>directory: pathlib.Path</em><span class="sig-paren">)</span><a class="headerlink" href="#inspire_mitmproxy.interaction.Interaction.save_in_dir" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save the interaction to a file.</p>
+<p>Structure of interactions:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">request</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">body</span><span class="p p-Indicator">:</span> <span class="s">&#39;Body</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">request&#39;</span>           <span class="c1"># string (or bytes)</span>
+  <span class="l l-Scalar l-Scalar-Plain">headers</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">Content-Type</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">[</span><span class="s">&#39;text/plain&#39;</span><span class="p p-Indicator">]</span>        <span class="c1"># array of strings (case of repeated headers)</span>
+    <span class="l l-Scalar l-Scalar-Plain">Host</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">[</span><span class="s">&#39;samplehost.local&#39;</span><span class="p p-Indicator">]</span>
+  <span class="l l-Scalar l-Scalar-Plain">method</span><span class="p p-Indicator">:</span> <span class="s">&#39;PUT&#39;</span>                         <span class="c1"># string (one of allowed HTTP method names)</span>
+  <span class="l l-Scalar l-Scalar-Plain">url</span><span class="p p-Indicator">:</span> <span class="s">&#39;http://samplehost.local/path&#39;</span>   <span class="c1"># string</span>
+<span class="l l-Scalar l-Scalar-Plain">response</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">body</span><span class="p p-Indicator">:</span> <span class="s">&#39;Body</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">response&#39;</span>          <span class="c1"># string (or bytes)</span>
+  <span class="l l-Scalar l-Scalar-Plain">headers</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">Content-Type</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">[</span><span class="s">&#39;text/plain&#39;</span><span class="p p-Indicator">]</span>        <span class="c1"># array of strings (ditto)</span>
+  <span class="l l-Scalar l-Scalar-Plain">status</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">code</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">200</span>                           <span class="c1"># integer</span>
+    <span class="l l-Scalar l-Scalar-Plain">message</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">OK</span>                         <span class="c1"># string</span>
+<span class="l l-Scalar l-Scalar-Plain">match</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">exact</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">method</span>                              <span class="c1"># array of one of the keys in request</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">uri</span>
+  <span class="l l-Scalar l-Scalar-Plain">regex</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">method</span><span class="p p-Indicator">:</span> <span class="s">&#39;PUT|POST&#39;</span>                  <span class="c1"># dict with keys of the keys in request</span>
+<span class="l l-Scalar l-Scalar-Plain">callbacks</span><span class="p p-Indicator">:</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">delay</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">10</span>                             <span class="c1"># integer (seconds)</span>
+  <span class="l l-Scalar l-Scalar-Plain">request</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">{}</span>                           <span class="c1"># follows request above (as callback is executed</span>
+                                        <span class="c1"># using python-requests, which does not support</span>
+                                        <span class="c1"># multiple header values, only first value of</span>
+                                        <span class="c1"># each header will be used)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="inspire_mitmproxy.interaction.Interaction.to_dict">
+<code class="descname">to_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; dict<a class="headerlink" href="#inspire_mitmproxy.interaction.Interaction.to_dict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="inspire_mitmproxy.services.html" class="btn btn-neutral float-right" title="inspire_mitmproxy.services package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../architecture.html" class="btn btn-neutral" title="Architecture" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, CERN.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

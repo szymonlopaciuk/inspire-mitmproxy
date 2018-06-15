@@ -1,0 +1,470 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>inspire_mitmproxy.services package &mdash; inspire-mitmproxy  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Changelog" href="../changelog.html" />
+    <link rel="prev" title="inspire_mitmproxy package" href="inspire_mitmproxy.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> inspire-mitmproxy
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.12.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../architecture.html">Architecture</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../architecture.html#dispatcher">Dispatcher</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../architecture.html#services">Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../architecture.html#management-service">Management Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../architecture.html#whitelist-service">Whitelist Service</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="inspire_mitmproxy.html">inspire_mitmproxy package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="inspire_mitmproxy.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">inspire_mitmproxy.services package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-inspire_mitmproxy.services.arxiv_service">inspire_mitmproxy.services.arxiv_service module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-inspire_mitmproxy.services.base_service">inspire_mitmproxy.services.base_service module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-inspire_mitmproxy.services.legacy_service">inspire_mitmproxy.services.legacy_service module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-inspire_mitmproxy.services.management_service">inspire_mitmproxy.services.management_service module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-inspire_mitmproxy.services.rt_service">inspire_mitmproxy.services.rt_service module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-inspire_mitmproxy.services.whitelist_service">inspire_mitmproxy.services.whitelist_service module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="inspire_mitmproxy.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inspire_mitmproxy.html#module-inspire_mitmproxy.dispatcher">inspire_mitmproxy.dispatcher module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inspire_mitmproxy.html#module-inspire_mitmproxy.errors">inspire_mitmproxy.errors module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inspire_mitmproxy.html#module-inspire_mitmproxy.http">inspire_mitmproxy.http module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inspire_mitmproxy.html#module-inspire_mitmproxy.interaction">inspire_mitmproxy.interaction module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">inspire-mitmproxy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="inspire_mitmproxy.html">inspire_mitmproxy package</a> &raquo;</li>
+        
+      <li>inspire_mitmproxy.services package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/_apidoc/inspire_mitmproxy.services.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-inspire_mitmproxy.services">
+<span id="inspire-mitmproxy-services-package"></span><h1>inspire_mitmproxy.services package<a class="headerlink" href="#module-inspire_mitmproxy.services" title="Permalink to this headline">¶</a></h1>
+<p>INSPIRE-MITMProxy Fake Services.</p>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-inspire_mitmproxy.services.arxiv_service">
+<span id="inspire-mitmproxy-services-arxiv-service-module"></span><h2>inspire_mitmproxy.services.arxiv_service module<a class="headerlink" href="#module-inspire_mitmproxy.services.arxiv_service" title="Permalink to this headline">¶</a></h2>
+<p>Fake Service for Arxiv.</p>
+<dl class="class">
+<dt id="inspire_mitmproxy.services.arxiv_service.ArxivService">
+<em class="property">class </em><code class="descclassname">inspire_mitmproxy.services.arxiv_service.</code><code class="descname">ArxivService</code><a class="headerlink" href="#inspire_mitmproxy.services.arxiv_service.ArxivService" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#inspire_mitmproxy.services.base_service.BaseService" title="inspire_mitmproxy.services.base_service.BaseService"><code class="xref py py-class docutils literal notranslate"><span class="pre">inspire_mitmproxy.services.base_service.BaseService</span></code></a></p>
+<dl class="attribute">
+<dt id="inspire_mitmproxy.services.arxiv_service.ArxivService.SERVICE_HOSTS">
+<code class="descname">SERVICE_HOSTS</code><em class="property"> = ['arxiv.org', 'export.arxiv.org']</em><a class="headerlink" href="#inspire_mitmproxy.services.arxiv_service.ArxivService.SERVICE_HOSTS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-inspire_mitmproxy.services.base_service">
+<span id="inspire-mitmproxy-services-base-service-module"></span><h2>inspire_mitmproxy.services.base_service module<a class="headerlink" href="#module-inspire_mitmproxy.services.base_service" title="Permalink to this headline">¶</a></h2>
+<p>Base for fake services.</p>
+<dl class="class">
+<dt id="inspire_mitmproxy.services.base_service.BaseService">
+<em class="property">class </em><code class="descclassname">inspire_mitmproxy.services.base_service.</code><code class="descname">BaseService</code><a class="headerlink" href="#inspire_mitmproxy.services.base_service.BaseService" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Mocked service base.</p>
+<dl class="attribute">
+<dt id="inspire_mitmproxy.services.base_service.BaseService.SERVICE_HOSTS">
+<code class="descname">SERVICE_HOSTS</code><em class="property"> = []</em><a class="headerlink" href="#inspire_mitmproxy.services.base_service.BaseService.SERVICE_HOSTS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="inspire_mitmproxy.services.base_service.BaseService.get_interactions_for_active_scenario">
+<code class="descname">get_interactions_for_active_scenario</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; List[inspire_mitmproxy.interaction.Interaction]<a class="headerlink" href="#inspire_mitmproxy.services.base_service.BaseService.get_interactions_for_active_scenario" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of scenarios</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="inspire_mitmproxy.services.base_service.BaseService.get_interactions_in_scenario">
+<code class="descname">get_interactions_in_scenario</code><span class="sig-paren">(</span><em>scenario_path: pathlib.Path</em><span class="sig-paren">)</span> &#x2192; List[inspire_mitmproxy.interaction.Interaction]<a class="headerlink" href="#inspire_mitmproxy.services.base_service.BaseService.get_interactions_in_scenario" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="inspire_mitmproxy.services.base_service.BaseService.get_path_for_active_scenario_dir">
+<code class="descname">get_path_for_active_scenario_dir</code><span class="sig-paren">(</span><em>create=False</em><span class="sig-paren">)</span> &#x2192; pathlib.Path<a class="headerlink" href="#inspire_mitmproxy.services.base_service.BaseService.get_path_for_active_scenario_dir" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="inspire_mitmproxy.services.base_service.BaseService.handles_request">
+<code class="descname">handles_request</code><span class="sig-paren">(</span><em>request: inspire_mitmproxy.http.MITMRequest</em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#inspire_mitmproxy.services.base_service.BaseService.handles_request" title="Permalink to this definition">¶</a></dt>
+<dd><p>Can this service handle the request?</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="inspire_mitmproxy.services.base_service.BaseService.increment_interaction_count">
+<code class="descname">increment_interaction_count</code><span class="sig-paren">(</span><em>interaction_name: str</em><span class="sig-paren">)</span><a class="headerlink" href="#inspire_mitmproxy.services.base_service.BaseService.increment_interaction_count" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="inspire_mitmproxy.services.base_service.BaseService.name">
+<code class="descname">name</code><a class="headerlink" href="#inspire_mitmproxy.services.base_service.BaseService.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="inspire_mitmproxy.services.base_service.BaseService.process_request">
+<code class="descname">process_request</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="headerlink" href="#inspire_mitmproxy.services.base_service.BaseService.process_request" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="inspire_mitmproxy.services.base_service.BaseService.process_response">
+<code class="descname">process_response</code><span class="sig-paren">(</span><em>request: inspire_mitmproxy.http.MITMRequest</em>, <em>response: inspire_mitmproxy.http.MITMResponse</em><span class="sig-paren">)</span><a class="headerlink" href="#inspire_mitmproxy.services.base_service.BaseService.process_response" title="Permalink to this definition">¶</a></dt>
+<dd><p>Perform operations based on live response.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="inspire_mitmproxy.services.base_service.BaseService.set_active_scenario">
+<code class="descname">set_active_scenario</code><span class="sig-paren">(</span><em>active_scenario: str</em><span class="sig-paren">)</span><a class="headerlink" href="#inspire_mitmproxy.services.base_service.BaseService.set_active_scenario" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-inspire_mitmproxy.services.legacy_service">
+<span id="inspire-mitmproxy-services-legacy-service-module"></span><h2>inspire_mitmproxy.services.legacy_service module<a class="headerlink" href="#module-inspire_mitmproxy.services.legacy_service" title="Permalink to this headline">¶</a></h2>
+<p>Fake Service for Arxiv.</p>
+<dl class="class">
+<dt id="inspire_mitmproxy.services.legacy_service.LegacyService">
+<em class="property">class </em><code class="descclassname">inspire_mitmproxy.services.legacy_service.</code><code class="descname">LegacyService</code><a class="headerlink" href="#inspire_mitmproxy.services.legacy_service.LegacyService" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#inspire_mitmproxy.services.base_service.BaseService" title="inspire_mitmproxy.services.base_service.BaseService"><code class="xref py py-class docutils literal notranslate"><span class="pre">inspire_mitmproxy.services.base_service.BaseService</span></code></a></p>
+<dl class="attribute">
+<dt id="inspire_mitmproxy.services.legacy_service.LegacyService.SERVICE_HOSTS">
+<code class="descname">SERVICE_HOSTS</code><em class="property"> = ['inspirehep.net']</em><a class="headerlink" href="#inspire_mitmproxy.services.legacy_service.LegacyService.SERVICE_HOSTS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-inspire_mitmproxy.services.management_service">
+<span id="inspire-mitmproxy-services-management-service-module"></span><h2>inspire_mitmproxy.services.management_service module<a class="headerlink" href="#module-inspire_mitmproxy.services.management_service" title="Permalink to this headline">¶</a></h2>
+<p>Service used to orchestrate fake services.</p>
+<dl class="class">
+<dt id="inspire_mitmproxy.services.management_service.ManagementService">
+<em class="property">class </em><code class="descclassname">inspire_mitmproxy.services.management_service.</code><code class="descname">ManagementService</code><span class="sig-paren">(</span><em>services: List[inspire_mitmproxy.services.base_service.BaseService]</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#inspire_mitmproxy.services.management_service.ManagementService" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#inspire_mitmproxy.services.base_service.BaseService" title="inspire_mitmproxy.services.base_service.BaseService"><code class="xref py py-class docutils literal notranslate"><span class="pre">inspire_mitmproxy.services.base_service.BaseService</span></code></a></p>
+<dl class="attribute">
+<dt id="inspire_mitmproxy.services.management_service.ManagementService.INTERACTIONS_ENDPOINT">
+<code class="descname">INTERACTIONS_ENDPOINT</code><em class="property"> = re.compile('/service/(\\w+)/interactions')</em><a class="headerlink" href="#inspire_mitmproxy.services.management_service.ManagementService.INTERACTIONS_ENDPOINT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="inspire_mitmproxy.services.management_service.ManagementService.SERVICE_HOSTS">
+<code class="descname">SERVICE_HOSTS</code><em class="property"> = ['mitm-manager.local']</em><a class="headerlink" href="#inspire_mitmproxy.services.management_service.ManagementService.SERVICE_HOSTS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="inspire_mitmproxy.services.management_service.ManagementService.build_response">
+<code class="descname">build_response</code><span class="sig-paren">(</span><em>code: int, json_message: Union[dict, list, NoneType]</em><span class="sig-paren">)</span> &#x2192; inspire_mitmproxy.http.MITMResponse<a class="headerlink" href="#inspire_mitmproxy.services.management_service.ManagementService.build_response" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="inspire_mitmproxy.services.management_service.ManagementService.get_active_scenario">
+<code class="descname">get_active_scenario</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#inspire_mitmproxy.services.management_service.ManagementService.get_active_scenario" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="inspire_mitmproxy.services.management_service.ManagementService.get_config">
+<code class="descname">get_config</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; dict<a class="headerlink" href="#inspire_mitmproxy.services.management_service.ManagementService.get_config" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="inspire_mitmproxy.services.management_service.ManagementService.get_scenarios">
+<code class="descname">get_scenarios</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; dict<a class="headerlink" href="#inspire_mitmproxy.services.management_service.ManagementService.get_scenarios" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="inspire_mitmproxy.services.management_service.ManagementService.get_service_interactions">
+<code class="descname">get_service_interactions</code><span class="sig-paren">(</span><em>service_name</em><span class="sig-paren">)</span> &#x2192; dict<a class="headerlink" href="#inspire_mitmproxy.services.management_service.ManagementService.get_service_interactions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="inspire_mitmproxy.services.management_service.ManagementService.get_services">
+<code class="descname">get_services</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; dict<a class="headerlink" href="#inspire_mitmproxy.services.management_service.ManagementService.get_services" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="inspire_mitmproxy.services.management_service.ManagementService.post_config">
+<code class="descname">post_config</code><span class="sig-paren">(</span><em>request: inspire_mitmproxy.http.MITMRequest</em><span class="sig-paren">)</span><a class="headerlink" href="#inspire_mitmproxy.services.management_service.ManagementService.post_config" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="inspire_mitmproxy.services.management_service.ManagementService.process_request">
+<code class="descname">process_request</code><span class="sig-paren">(</span><em>request: inspire_mitmproxy.http.MITMRequest</em><span class="sig-paren">)</span> &#x2192; inspire_mitmproxy.http.MITMResponse<a class="headerlink" href="#inspire_mitmproxy.services.management_service.ManagementService.process_request" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="inspire_mitmproxy.services.management_service.ManagementService.propagate_option_changes">
+<code class="descname">propagate_option_changes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#inspire_mitmproxy.services.management_service.ManagementService.propagate_option_changes" title="Permalink to this definition">¶</a></dt>
+<dd><p>On change of config, propagate relevant information to services.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="inspire_mitmproxy.services.management_service.ManagementService.put_config">
+<code class="descname">put_config</code><span class="sig-paren">(</span><em>request: inspire_mitmproxy.http.MITMRequest</em><span class="sig-paren">)</span><a class="headerlink" href="#inspire_mitmproxy.services.management_service.ManagementService.put_config" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="inspire_mitmproxy.services.management_service.ManagementService.set_recording">
+<code class="descname">set_recording</code><span class="sig-paren">(</span><em>request: inspire_mitmproxy.http.MITMRequest</em><span class="sig-paren">)</span><a class="headerlink" href="#inspire_mitmproxy.services.management_service.ManagementService.set_recording" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-inspire_mitmproxy.services.rt_service">
+<span id="inspire-mitmproxy-services-rt-service-module"></span><h2>inspire_mitmproxy.services.rt_service module<a class="headerlink" href="#module-inspire_mitmproxy.services.rt_service" title="Permalink to this headline">¶</a></h2>
+<p>Fake Service for RT Ticketing System.</p>
+<dl class="class">
+<dt id="inspire_mitmproxy.services.rt_service.RTService">
+<em class="property">class </em><code class="descclassname">inspire_mitmproxy.services.rt_service.</code><code class="descname">RTService</code><a class="headerlink" href="#inspire_mitmproxy.services.rt_service.RTService" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#inspire_mitmproxy.services.base_service.BaseService" title="inspire_mitmproxy.services.base_service.BaseService"><code class="xref py py-class docutils literal notranslate"><span class="pre">inspire_mitmproxy.services.base_service.BaseService</span></code></a></p>
+<dl class="attribute">
+<dt id="inspire_mitmproxy.services.rt_service.RTService.SERVICE_HOSTS">
+<code class="descname">SERVICE_HOSTS</code><em class="property"> = ['inspirevm13.cern.ch', 'rt.inspirehep.net']</em><a class="headerlink" href="#inspire_mitmproxy.services.rt_service.RTService.SERVICE_HOSTS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-inspire_mitmproxy.services.whitelist_service">
+<span id="inspire-mitmproxy-services-whitelist-service-module"></span><h2>inspire_mitmproxy.services.whitelist_service module<a class="headerlink" href="#module-inspire_mitmproxy.services.whitelist_service" title="Permalink to this headline">¶</a></h2>
+<p>Service which allows all requests outside</p>
+<dl class="class">
+<dt id="inspire_mitmproxy.services.whitelist_service.WhitelistService">
+<em class="property">class </em><code class="descclassname">inspire_mitmproxy.services.whitelist_service.</code><code class="descname">WhitelistService</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#inspire_mitmproxy.services.whitelist_service.WhitelistService" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#inspire_mitmproxy.services.base_service.BaseService" title="inspire_mitmproxy.services.base_service.BaseService"><code class="xref py py-class docutils literal notranslate"><span class="pre">inspire_mitmproxy.services.base_service.BaseService</span></code></a></p>
+<dl class="attribute">
+<dt id="inspire_mitmproxy.services.whitelist_service.WhitelistService.DEFAULT_HOSTS">
+<code class="descname">DEFAULT_HOSTS</code><em class="property"> = 'test-indexer test-scrapyd test-web-e2e.local'</em><a class="headerlink" href="#inspire_mitmproxy.services.whitelist_service.WhitelistService.DEFAULT_HOSTS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="inspire_mitmproxy.services.whitelist_service.WhitelistService.process_request">
+<code class="descname">process_request</code><span class="sig-paren">(</span><em>request: inspire_mitmproxy.http.MITMRequest</em><span class="sig-paren">)</span><a class="headerlink" href="#inspire_mitmproxy.services.whitelist_service.WhitelistService.process_request" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="inspire_mitmproxy.services.whitelist_service.WhitelistService.process_response">
+<code class="descname">process_response</code><span class="sig-paren">(</span><em>request: inspire_mitmproxy.http.MITMRequest</em>, <em>response: inspire_mitmproxy.http.MITMResponse</em><span class="sig-paren">)</span><a class="headerlink" href="#inspire_mitmproxy.services.whitelist_service.WhitelistService.process_response" title="Permalink to this definition">¶</a></dt>
+<dd><p>Perform operations based on live response.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../changelog.html" class="btn btn-neutral float-right" title="Changelog" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="inspire_mitmproxy.html" class="btn btn-neutral" title="inspire_mitmproxy package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, CERN.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

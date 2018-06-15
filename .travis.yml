@@ -1,0 +1,68 @@
+# -*- coding: utf-8 -*-
+#
+# This file is part of INSPIRE-MITMPROXY.
+# Copyright (C) 2018 CERN.
+#
+# INSPIRE is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# INSPIRE is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with INSPIRE. If not, see <http://www.gnu.org/licenses/>.
+#
+# In applying this license, CERN does not waive the privileges and immunities
+# granted to it by virtue of its status as an Intergovernmental Organization
+# or submit itself to any jurisdiction.
+
+notifications:
+  email: false
+
+sudo: false
+
+language: python
+
+cache: pip
+
+python:
+  - 3.6
+
+services:
+  - docker
+
+matrix:
+  fast_finish: true
+
+before_install:
+  - travis_retry pip install --upgrade pip setuptools
+  - travis_retry pip install coveralls
+
+install:
+  - travis_retry pip install -e .[tests]
+
+script:
+  - chmod +x *.sh
+  - ./run-tests.sh && ./dockerhub-deploy.sh
+
+after_success:
+  - coveralls
+
+env:
+  global:
+    - secure: "NcHexUrj+MilmIcXmmDLlzsSWRE7TGHeSxNPMdZvMPekKIlDlCwWUTSt+TfSfz0EAaDOcfCUHEoBruaspds/hQYbVCSvb/hc/3euzcL3ZrT8bCr+A+8EAxtPnAf7msh9Qjadc15902O2CGAtMKNc2PIJqjrdynTl1qH7XyS8GfmfAu6C0sh5LY0VhZu0bXLixz75Wd+2z5r8NiALBxaZWrJq1MFl47EXfGE3TK2T5bTUpMbsWCDyblK6KvqgIVcF+gYeqlOKDnZ35t7HYG10onDbXxK/7K5AViR2sjMsaPkWwXTBpb5/1KV+syp9acKMBu0ysBhOadC79a3PjILbfzKNLSLkvV+dduEvwdj8bEoPVwM23T7KXcOYCThp0yxK0G/SWMHT88FOD/sIYMZwr9AysgH2B8WESs1xS4PQKq94KOzvHKvtqReodqF1jPcGJyS6Gq89lR7evF0OramKS1pbuCb7uCid8D1jWDsdNDZhcThUSKbw+1bSdIGSEL2Py6GBLrEDQbUe49qN2IDlzxkNUqs8aJxoXHaCfT07ogXiJwapouDQPjfGF7QPUNNGC6k4ZgJzPqZ5Fq2NsI+xB6sD4yMQ0JPXYXbGlMPRwDeXf7q4uAxT2DibNIK2iRzEGB4IgzNdKUiqPmdnYMcc+aAjrFmKU6vkKIFunqaHWII="
+    - secure: "Qe0HGxU69WBI0d7XIaIT1R7/ILNhc/cKBd3fAYKjgiSfDmLkR7HifLvrErYtYKGc+P+aTN8egMbyKM3Yh1STJAf1ckTbHQCXwaOEUpISqx3/4BZx5NDnzCDesyxufoIjrHqkOhF/4a85CY+sPuWj0F36BElRkvZV0Hs9N9qmzOLW/LMSxI1ZNseiZjq8hPUAQZo/KTn+imGGcsb1H+SopXKkNWEMT0haRn56UPwkiAUx5RSZEyhOkkt5wDVmi1ck9x0WezEmvXNJJKT9SrjA22ZggaZyKlND1ZvggMCaUt9IALQO4G6ebWhgJGc0E8bP16xXqJJvBJ8GaJF9c6RvZb+ao8ikdC2Ns2olViMx39Bhvln7LMOC9TlDv5APbBjitVZKNlP/jUxNR1mPDN0c87EYBy6r/eDLFdFs9nVsViQoAHfvnOiaKg6TzBicTElHnTlTP6u1HIR0Bhc4zR6KFqL2Nb1Y8Ij2KfH3c11/HS2reekyk1fI52gyiAzYEmK8zhN8UpkB82tanErKtpkTGAsICq6j65/9keUBszvxCn45I5wMPOH/QcgrpG6g00CwJ8b6lW5ted22u6QEJiSHLm3oEsQtFXf9ZjM5XTCPJHRctLEX39JuKb01UDGINRGxeUCwa8jlqs4NaZtwnHzWncUbZDl5ZCcdZ+uCFiMfwRo="
+
+deploy:
+  provider: pypi
+  user: inspirehep
+  password:
+    secure: "FUmFbusWxRlBrDpUw7Pr4ZMReewrTTEXtXYxeEW3qGPuQ4pGVz7+tZKTZop3VA3XRi9oaE2QQ6GGCfDcgxWP8nptY8TfNHGWZ0zB4jmL/0i87WUuOJRw5pskjABCWhz3Q2SADOWE5O9OiJ3t08Z6Ffr00Vx5ccc3oWO2qAKnnz8ikD1+cBziKdh28TiwhK1XQZtTmeTwCvlPtshAbmO79fH5YwibiggmvB2yllX8nVMbhtQ14yQivTCamRJExTCTVlXnMglC97y1Qc87FHHIhYUsPkSyEcJMO5DqV2ZQ9WaOXZBlRqijRxYOfz9YRKWjLGSznF7TQXJ3bnPOa6YCmtGiK9PrEK4Kt3cKr65tHhV9TxGl58LCqpMRmLwQk/yPJKYL2UdnjKWWO6Hg6NpSoAfqoetUu/mlbVanbfYHlpJfhqQb46kmhKltFHhhDg0ObBs3G+5V8xLIchmqVFdxXCEdJFZUBWyD5D6kUKUQ8xdtqOT8YPG8/WJQIcDANHNH+xI3QaCx3O1yjuJD3ek+dP0EIgusFZsubbYxWQFETKh3WoRCNq7xteAwb0uiwrw4Dzvv9sJk9Bz750yjkOFL/BuEXbf5w2ute5HtdQGvsldfMrZ+e4NeevYCj60EB4KdoQZdNlqhXX8QWKYsat9XPrmJtj44U2N9YuNf5xbgWpU="
+  on:
+    branch: master
+    python: 3.6
+  distribution: sdist

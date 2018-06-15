@@ -1,0 +1,51 @@
+inspire\_mitmproxy package
+==========================
+
+.. automodule:: inspire_mitmproxy
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+Subpackages
+-----------
+
+.. toctree::
+
+    inspire_mitmproxy.services
+
+Submodules
+----------
+
+inspire\_mitmproxy.dispatcher module
+------------------------------------
+
+.. automodule:: inspire_mitmproxy.dispatcher
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+inspire\_mitmproxy.errors module
+--------------------------------
+
+.. automodule:: inspire_mitmproxy.errors
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+inspire\_mitmproxy.http module
+------------------------------
+
+.. automodule:: inspire_mitmproxy.http
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+inspire\_mitmproxy.interaction module
+-------------------------------------
+
+.. automodule:: inspire_mitmproxy.interaction
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+

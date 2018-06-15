@@ -1,0 +1,18 @@
+request:
+  body: null
+  headers:
+    Accept: [application/json]
+  method: GET
+  url: https://host_a.local/api
+response:
+  body: !!python/unicode 'test_scenario_replays_ok/TestServiceA/0'
+  headers:
+    content-type: [application/json]
+  status: {code: 200, message: OK}
+callbacks:
+- delay: 0.5
+  request:
+    body: null
+    headers: {}
+    method: 'GET'
+    url: http://callback.local/

@@ -1,0 +1,13 @@
+request:
+  body: null
+  headers:
+    Host: [test.local]
+  method: GET
+  url: https://test.local/path
+response:
+  body: !!python/unicode '{"key": "value"}'
+  headers:
+    Content-Type: [application/json; charset=UTF-8]
+  status:
+    code: 200
+    message: OK

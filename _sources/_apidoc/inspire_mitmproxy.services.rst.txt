@@ -1,0 +1,60 @@
+inspire\_mitmproxy.services package
+===================================
+
+.. automodule:: inspire_mitmproxy.services
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+Submodules
+----------
+
+inspire\_mitmproxy.services.arxiv\_service module
+-------------------------------------------------
+
+.. automodule:: inspire_mitmproxy.services.arxiv_service
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+inspire\_mitmproxy.services.base\_service module
+------------------------------------------------
+
+.. automodule:: inspire_mitmproxy.services.base_service
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+inspire\_mitmproxy.services.legacy\_service module
+--------------------------------------------------
+
+.. automodule:: inspire_mitmproxy.services.legacy_service
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+inspire\_mitmproxy.services.management\_service module
+------------------------------------------------------
+
+.. automodule:: inspire_mitmproxy.services.management_service
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+inspire\_mitmproxy.services.rt\_service module
+----------------------------------------------
+
+.. automodule:: inspire_mitmproxy.services.rt_service
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+inspire\_mitmproxy.services.whitelist\_service module
+-----------------------------------------------------
+
+.. automodule:: inspire_mitmproxy.services.whitelist_service
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+

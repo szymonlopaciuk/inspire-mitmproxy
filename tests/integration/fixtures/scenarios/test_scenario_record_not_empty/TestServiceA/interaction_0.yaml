@@ -1,0 +1,11 @@
+request:
+  body: ''
+  headers:
+    Accept: [application/json]
+  method: GET
+  url: https://host_a.local/replayme
+response:
+  body: !!python/unicode 'test_scenario_record_not_empty/TestServiceA/0'
+  headers:
+    content-type: [application/json]
+  status: {code: 200, message: OK}

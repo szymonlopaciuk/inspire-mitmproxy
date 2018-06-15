@@ -1,0 +1,11 @@
+request:
+  body: 'correct body content'
+  headers:
+    Accept: [application/json]
+  method: GET
+  url: https://host_a.local/api
+response:
+  body: !!python/unicode 'test_scenario_raise_if_no_interaction/TestServiceA/0'
+  headers:
+    content-type: [application/json]
+  status: {code: 200, message: OK}
